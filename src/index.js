@@ -45,6 +45,7 @@ function decode(expr) {
         let morz = ''
         if (code == '**********') {
             resStr += ' ';
+            n++;
             continue;
         }
         for (let i=0; i < code.length; i += 2){
@@ -57,13 +58,11 @@ function decode(expr) {
                 break;
             }
         }
-        resStr += MORSE_TABLE[morz]
+        resStr += MORSE_TABLE[morz];
         n++;
     }
     return resStr;
 }
-
-//00101010100000000010001011101000101110100000111111**********00001011110000111111000010111000101110100000111010
 
 module.exports = {
     decode
